@@ -1,15 +1,28 @@
 .container {
-  width: 100%;
-  box-shadow: gray 0 10px 15px -3px rgb(0 0 0 / 0.1),
-    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 85%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  gap: 0.7rem;
+}
+
+.container:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .image {
-  width: 100%;
+  width: 150px;
+  height: 150px;
+  object-fit: center;
 }
 
 @media only screen and (max-width: 600px) {
   .container {
     height: auto;
+    gap: 0.3rem;
+    width: 100%;
   }
 }

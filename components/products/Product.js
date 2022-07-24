@@ -1,20 +1,24 @@
-import React, { useState } from 'react'
-import styles from './Product.module.css'
+import Image from "next/image";
+import React, { useState } from "react";
+import styles from "./Product.module.css";
 
-const Product = ({image, name}) => {
-  
-
-
+const Product = ({ images, name, description }) => {
   return (
     <div className={styles.container}>
-      {
-      image.map((images,index) => 
-         <img key={index} src={images.asset.url}
-      className={styles.image} />)
-      }
-      <p>{name}</p>
+      {images.map((image, index) => (
+        <Image
+          width={200}
+          height={200}
+          key={index}
+          src={image.asset.url}
+          className={styles.image}
+          alt={image.alt}
+        />
+      ))}
+      <h4>{name}</h4>
+      <p className={"more-text"}> {description}</p>
     </div>
-  )}
+  );
+};
 
-
-export default Product
+export default Product;

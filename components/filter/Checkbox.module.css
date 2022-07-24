@@ -1,0 +1,50 @@
+.toggle {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  margin: 10px;
+}
+
+/* To create surface of toggle button */
+.toggle:after {
+  content: "";
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+  background: rgba(196, 195, 195, 0.55);
+  border-radius: 18px;
+  clear: both;
+}
+
+/* Contents before checkbox to create toggle handle */
+.toggle:before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -3px;
+  border-radius: 50%;
+  background: rgb(255, 255, 255);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Shift the handle to left on check event */
+.toggle:checked:before {
+  left: 32px;
+  box-shadow: -1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+/* Background color when toggle button will be active */
+.toggle:checked:after {
+  background: #87eed9;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

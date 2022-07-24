@@ -1,0 +1,69 @@
+.title {
+  margin-left: 15%;
+  margin-bottom: 2rem;
+}
+
+.filterIcon {
+  color: gray;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.filterWrap {
+  color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 2rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 5px 20px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.filter {
+  color: gray;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  justify-content: center;
+}
+
+.main {
+  display: flex;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 15%;
+  padding: 0 0 0 1rem;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  align-items: center;
+  width: 85%;
+  height: 85vh;
+  overflow: scroll;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+.products::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .products {
+    display: grid;
+    width: 100%;
+    height: 75vh;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .title {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    text-align: center;
+  }
+}
