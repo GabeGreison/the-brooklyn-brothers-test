@@ -1,26 +1,44 @@
 .title {
-  margin-left: 15%;
+  left: 14.8%;
   margin-bottom: 2rem;
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0 2rem 0;
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #00b5d171;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  border-radius: 0.2rem;
+  z-index: -1;
 }
 
 .filterIcon {
-  color: gray;
+  color: #00b6d1;
   width: 1.5rem;
   height: 1.5rem;
 }
 
 .filterWrap {
-  color: gray;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  padding: 1rem 0.8rem;
   margin-bottom: 1rem;
   box-shadow: 0 5px 20px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
 
 .filter {
-  color: gray;
+  color: #00b6d1;
   display: flex;
   align-items: center;
   gap: 0.2rem;
@@ -36,7 +54,7 @@
   flex-direction: column;
   height: 100vh;
   width: 15%;
-  padding: 0 0 0 1rem;
+  padding: 0 0 0 0.5rem;
 }
 
 .products {
@@ -46,7 +64,7 @@
   padding: 2rem;
   align-items: center;
   width: 85%;
-  height: 85vh;
+  height: 80vh;
   overflow: scroll;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
 }
@@ -54,16 +72,23 @@
   display: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .products {
     display: grid;
     width: 100%;
-    height: 75vh;
+    height: calc(100vh - 224px);
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .title {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
     margin-bottom: 1rem;
-    margin-left: 0;
-    text-align: center;
+    left: 0;
+    text-align: start;
+  }
+
+  .title::after {
+    display: none;
   }
 }

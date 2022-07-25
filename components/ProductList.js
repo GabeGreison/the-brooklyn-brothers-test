@@ -1,15 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import styles from "./ProductList.module.css";
 import Product from "../components/products/Product";
 import Filters from "../components/filter/Filters";
 import useCheckMobileScreen from "../hooks/useCheckMobileScreen";
 import MobileNav from "./MobileNav";
 import FilterIcon from "./icons/FilterIcon";
+import DeleteFilterIcon from "./icons/DeleteFilterIcon";
 
-const ProductList = ({ productsData, categories }) => {
+const ProductList = ({ productsData }) => {
   const isMobile = useCheckMobileScreen();
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [openMobileNav, setOpenMobileNav] = useState(false);
+
+  const categories = useMemo(
+    () =>
+      productsData
+        .map((product) => product.category)
+        .reduce((uniqueCategories, currentCategory) => {
+          if (
+            !uniqueCategories.find(
+              (category) => category._id === currentCategory._id
+            )
+          ) {
+            uniqueCategories.push(currentCategory);
+          }
+          return uniqueCategories;
+        }, []),
+    [productsData]
+  );
 
   const toggleSelectedCategories = (category) => {
     if (selectedCategories.includes(category)) {
@@ -28,6 +46,13 @@ const ProductList = ({ productsData, categories }) => {
         <div className={styles.filterWrap}>
           <h3 onClick={() => setOpenMobileNav(true)} className={styles.filter}>
             Filtrar <FilterIcon className={styles.filterIcon} />
+          </h3>
+          <h3
+            onClick={() => setSelectedCategories([])}
+            className={styles.filter}
+          >
+            Restablecer Filtros
+            <DeleteFilterIcon className={styles.filterIcon} />
           </h3>
         </div>
       )}

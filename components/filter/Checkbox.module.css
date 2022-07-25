@@ -33,6 +33,19 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
 }
 
+@media only screen and (max-width: 1000px) {
+  .toggle:after {
+    width: 48px;
+    height: 18px;
+  }
+
+  /* Contents before checkbox to create toggle handle */
+  .toggle:before {
+    width: 22px;
+    height: 22px;
+  }
+}
+
 /* Shift the handle to left on check event */
 .toggle:checked:before {
   left: 32px;
@@ -40,7 +53,7 @@
 }
 /* Background color when toggle button will be active */
 .toggle:checked:after {
-  background: #87eed9;
+  background: #00b6d1;
 }
 
 .label {

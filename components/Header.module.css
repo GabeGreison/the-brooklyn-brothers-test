@@ -2,9 +2,9 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 6vh;
+  height: 8vh;
   background-color: black;
   margin-bottom: 3rem;
-  color: aliceblue;
+  color: white;
   padding: 1rem;
 }

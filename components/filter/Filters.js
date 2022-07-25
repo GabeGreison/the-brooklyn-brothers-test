@@ -4,7 +4,6 @@ import styles from "./Filters.module.css";
 export default function Filters({
   categories,
   toggleSelectedCategories,
-  checked,
   selectedCategories,
 }) {
   function onChange(e) {
@@ -12,17 +11,19 @@ export default function Filters({
   }
 
   return (
-    <div className={styles.categories}>
-      <h3>Categorías</h3>
-      {categories.map((category) => (
-        <Checkbox
-          onChange={onChange}
-          checked={selectedCategories.includes(category._id)}
-          key={category._id}
-          label={category.name}
-          id={category._id}
-        />
-      ))}
-    </div>
+    <>
+      <h3 className={styles.categoriesTitle}>Categorías</h3>
+      <div className={styles.categories}>
+        {categories.map((category) => (
+          <Checkbox
+            onChange={onChange}
+            checked={selectedCategories.includes(category._id)}
+            key={category._id}
+            label={category.name}
+            id={category._id}
+          />
+        ))}
+      </div>
+    </>
   );
 }

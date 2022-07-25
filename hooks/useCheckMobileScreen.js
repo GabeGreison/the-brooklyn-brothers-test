@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const useCheckMobileScreen = () => {
-  const [width, setWidth] = useState("");
+  const [width, setWidth] = useState(0);
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -14,7 +14,7 @@ const useCheckMobileScreen = () => {
     };
   }, []);
 
-  return width <= 768;
+  return width <= 1000;
 };
 
 export default useCheckMobileScreen;
