@@ -7,7 +7,7 @@ import NextHead from "../components/NextHead";
 export default function Home() {
   return (
     <>
-      <NextHead title="TBB - Product List" />
+      <NextHead title="T.B.B - Product List" />
       <div className={styles.container}>
         <Header />
         <ProductList productsData={products.data.nodes} />
