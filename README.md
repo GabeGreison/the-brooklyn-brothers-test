@@ -5,7 +5,7 @@ This app is a Front-End challenge "Listing Products Component" for [The Brooklyn
  - [ReactJS](https://reactjs.org/)
  - [NextJS](https://nextjs.org/)
 
-And is deploying in [vercel](https://vercel.com):
+And is deploying in [Vercel](https://vercel.com):
 - [https://the-brooklyn-brothers-test.vercel.app/](https://the-brooklyn-brothers-test.vercel.app/)
 
 ## Getting Started
