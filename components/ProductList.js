@@ -51,7 +51,7 @@ const ProductList = ({ productsData }) => {
             onClick={() => setSelectedCategories([])}
             className={styles.filter}
           >
-            Restablecer Filtros
+            Limpiar Filtros
             <DeleteFilterIcon className={styles.filterIcon} />
           </h3>
         </div>
